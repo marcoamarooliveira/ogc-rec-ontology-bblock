@@ -1,0 +1,265 @@
+{
+    "@context": {
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "dct": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "apkg-rec": "http://w3id.org/apkg/v2/record#",
+        "apkg-pro": "http://w3id.org/apkg/v2/process#",
+        "bf": "http://id.loc.gov/ontologies/bibframe/",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "geo": "http://www.opengis.net/ont/geosparql#",
+        "pav": "http://purl.org/pav/",
+        "vcard": "http://www.w3.org/2006/vcard/ns#",
+
+        "id": "@id",
+        "conformsTo": {"@id": "apkg-rec:conformsTo", "@type": "xsd:anyURI"},
+
+        "geometry": {
+            "@id": "http://www.opengis.net/ont/geosparql#hasGeometry",
+            "@context": {
+                "type": "apkg-rec:geometryType",
+                "coordinates": {"@id": "apkg-rec:coordinates", "@type": "@json"}
+            }
+        },
+
+        "links": {
+            "@id": "dcat:qualifiedRelation",
+            "@context": {
+                "href": {"@id": "apkg-rec:href", "@type": "xsd:anyURI"},
+                "rel": "apkg-rec:rel",
+                "type": "apkg-rec:mediaType",
+                "title": "dct:title",
+                "length": {"@id": "apkg-rec:length", "@type": "xsd:nonNegativeInteger"},
+                "profile": {"@id": "apkg-rec:profile", "@type": "xsd:anyURI"},
+                "created": {"@id": "dct:created", "@type": "xsd:dateTimeStamp"},
+                "updated": {"@id": "dct:modified", "@type": "xsd:dateTimeStamp"}
+            }
+        },
+
+        "properties": {
+            "@id": "@nest",
+            "@context": {
+                "id": null,
+                "type": "apkg-rec:resourceType",
+
+                "title": "dct:title",
+                "name": "dct:title",
+                "description": "dct:description",
+                "keywords": "dcat:keyword",
+                "created": {"@id": "dct:created", "@type": "xsd:dateTimeStamp"},
+                "updated": {"@id": "dct:modified", "@type": "xsd:dateTimeStamp"},
+                "license": {"@id": "apkg-rec:license", "@type": "xsd:anyURI"},
+
+                "themes": {
+                    "@id": "apkg-rec:hasTheme",
+                    "@context": {
+                        "scheme": {"@id": "apkg-rec:scheme", "@type": "xsd:anyURI"},
+                        "concepts": {
+                            "@id": "apkg-rec:hasConcept",
+                            "@context": {"id": "skos:notation"}
+                        }
+                    }
+                },
+                "formats": {
+                    "@id": "dct:format",
+                    "@context": {
+                        "name": "dct:title",
+                        "mediaType": "apkg-rec:mediaType"
+                    }
+                },
+                "contacts": {
+                    "@id": "dcat:contactPoint",
+                    "@context": {
+                        "identifier": "dct:identifier",
+                        "name": "vcard:fn",
+                        "position": "vcard:title",
+                        "organization": "vcard:organization-name",
+                        "logo": {
+                            "@id": "vcard:hasLogo",
+                            "@context": {
+                                "href": {"@id": "apkg-rec:href", "@type": "xsd:anyURI"},
+                                "rel": "apkg-rec:rel",
+                                "type": "apkg-rec:mediaType",
+                                "title": "dct:title"
+                            }
+                        },
+                        "phones": {
+                            "@id": "vcard:hasTelephone",
+                            "@context": {
+                                "value": "vcard:value",
+                                "roles": "apkg-rec:contactPointType"
+                            }
+                        },
+                        "emails": {
+                            "@id": "vcard:hasEmail",
+                            "@context": {
+                                "value": "vcard:value",
+                                "roles": "apkg-rec:contactPointType"
+                            }
+                        },
+                        "addresses": {
+                            "@id": "vcard:hasAddress",
+                            "@context": {
+                                "street_address": "vcard:street-address",
+                                "address_locality": "vcard:locality",
+                                "administrative_area": "vcard:region",
+                                "postal_code": "vcard:postal-code",
+                                "address_country": "vcard:country-name",
+                                "roles": "apkg-rec:contactPointType"
+                            }
+                        },
+                        "links": {
+                            "@id": "apkg-rec:hasLink",
+                            "@context": {
+                                "href": {"@id": "apkg-rec:href", "@type": "xsd:anyURI"},
+                                "rel": "apkg-rec:rel",
+                                "type": "apkg-rec:mediaType",
+                                "title": "dct:title"
+                            }
+                        },
+                        "hoursOfService": "apkg-rec:hoursOfService",
+                        "contactInstructions": "apkg-rec:contactInstructions",
+                        "roles": "vcard:role"
+                    }
+                },
+
+                "identifier": "apkg-pro:processID",
+                "family": "apkg-pro:familyID",
+                "software_version": "pav:version",
+                "date_created": {"@id": "apkg-pro:dateCreated", "@type": "xsd:dateTimeStamp"},
+                "sdDatePublished": {"@id": "apkg-pro:registrationDate", "@type": "xsd:dateTimeStamp"},
+                "latest": {"@id": "apkg-pro:isLatestVersion", "@type": "xsd:boolean"},
+                "citation": "apkg-pro:citation",
+                "class": "apkg-pro:processClass",
+                "temporal_coverage": "apkg-pro:temporalCoverage",
+                "url": {"@id": "apkg-pro:cwlDescriptor", "@type": "@id"},
+                "code_repository": {"@id": "apkg-pro:codeRepository", "@type": "xsd:anyURI"},
+                "programming_language": "apkg-pro:programmingLanguage",
+                "registration_url": {"@id": "apkg-pro:originalURL", "@type": "xsd:anyURI"},
+                "original_url": {"@id": "apkg-pro:originalURL", "@type": "xsd:anyURI"},
+
+                "author": {
+                    "@id": "dct:creator",
+                    "@context": {"name": "foaf:name"}
+                },
+                "contributor": {
+                    "@id": "dct:contributor",
+                    "@context": {"name": "foaf:name"}
+                },
+                "maintainer": {
+                    "@id": "apkg-pro:hasMaintainer",
+                    "@context": {"name": "foaf:name"}
+                },
+                "sdPublisher": {
+                    "@id": "dct:publisher",
+                    "@context": {
+                        "class": null,
+                        "name": "skos:prefLabel",
+                        "url": {"@id": "apkg-pro:homepage", "@type": "xsd:anyURI"}
+                    }
+                },
+                "source_organization": {
+                    "@id": "apkg-pro:hasSourceOrganisation",
+                    "@context": {
+                        "name": "skos:prefLabel",
+                        "url": {"@id": "apkg-pro:homepage", "@type": "xsd:anyURI"},
+                        "address": {
+                            "@id": "vcard:hasAddress",
+                            "@context": {
+                                "street_address": "vcard:street-address",
+                                "address_locality": "vcard:locality",
+                                "administrative_area": "vcard:region",
+                                "postal_code": "vcard:postal-code",
+                                "address_country": "vcard:country-name",
+                                "roles": "apkg-rec:contactPointType"
+                            }
+                        }
+                    }
+                },
+                "provider": {
+                    "@id": "apkg-pro:hasProviderOrganisation",
+                    "@context": {
+                        "name": "skos:prefLabel",
+                        "url": {"@id": "apkg-pro:homepage", "@type": "xsd:anyURI"},
+                        "address": {
+                            "@id": "vcard:hasAddress",
+                            "@context": {
+                                "street_address": "vcard:street-address",
+                                "address_locality": "vcard:locality",
+                                "administrative_area": "vcard:region",
+                                "postal_code": "vcard:postal-code",
+                                "address_country": "vcard:country-name",
+                                "roles": "apkg-rec:contactPointType"
+                            }
+                        }
+                    }
+                },
+                "producer": {
+                    "@id": "apkg-pro:hasProducerOrganisation",
+                    "@context": {
+                        "name": "skos:prefLabel",
+                        "url": {"@id": "apkg-pro:homepage", "@type": "xsd:anyURI"},
+                        "address": {
+                            "@id": "vcard:hasAddress",
+                            "@context": {
+                                "street_address": "vcard:street-address",
+                                "address_locality": "vcard:locality",
+                                "administrative_area": "vcard:region",
+                                "postal_code": "vcard:postal-code",
+                                "address_country": "vcard:country-name",
+                                "roles": "apkg-rec:contactPointType"
+                            }
+                        }
+                    }
+                },
+
+                "spatial_coverage": {
+                    "@id": "bf:geographicCoverage",
+                    "@context": {
+                        "class": "apkg-pro:geoClass",
+                        "geo": {
+                            "@id": "http://www.opengis.net/ont/geosparql#hasGeometry",
+                            "@context": {
+                                "box": "apkg-pro:box"
+                            }
+                        }
+                    }
+                },
+
+                "inputs": {
+                    "@id": "apkg-pro:hasInput",
+                    "@context": {
+                        "id": "dct:identifier",
+                        "type": "apkg-pro:parameterType",
+                        "doc": "dct:description",
+                        "default": {"@id": "apkg-pro:defaultValue", "@type": "xsd:string"},
+                        "format": "apkg-pro:format",
+                        "label": "rdfs:label",
+                        "keywords": "apkg-pro:parameterKeyword"
+                    }
+                },
+                "outputs": {
+                    "@id": "apkg-pro:hasOutput",
+                    "@context": {
+                        "id": "dct:identifier",
+                        "type": "apkg-pro:parameterType",
+                        "doc": "dct:description",
+                        "default": {"@id": "apkg-pro:defaultValue", "@type": "xsd:string"},
+                        "format": "apkg-pro:format",
+                        "label": "rdfs:label",
+                        "keywords": "apkg-pro:parameterKeyword"
+                    }
+                },
+
+                "Secrets": {
+                    "@id": "apkg-pro:hasSecret",
+                    "@context": {
+                        "secrets": "apkg-pro:secretInputID"
+                    }
+                }
+            }
+        }
+    }
+}

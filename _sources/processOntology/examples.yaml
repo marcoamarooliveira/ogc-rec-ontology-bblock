@@ -1,0 +1,25 @@
+- title: This is an example with just a description and no code snippets.
+  content: |-
+    This an example.
+    
+    In **Markdown** format.
+  snippets:
+    - language: json
+      ref: examples/tool_d.u.th_gr_openoil_animation_0.1.0.json
+      
+- title: This is an example with just a description and no code snippets.
+  content: |-
+    This an example.
+    
+    In **Markdown** format.
+  snippets:
+    - language: jsonld
+      ref: examples/tool_d.u.th_gr_openoil_animation_0.1.0.jsonld
+
+- title: Examples can have content and/or code snippets.
+  content: |-
+    The content of this example. 
+
+  snippets:
+    - language: rdf
+      ref: examples/tool_d.u.th_gr_openoil_animation_0.1.0.ttl

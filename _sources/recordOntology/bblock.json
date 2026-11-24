@@ -1,0 +1,23 @@
+{
+  "name": "OGC Record Ontology",
+  "abstract": "This Building Block represents the Ontology for the OGC API Records schema, based on the results of the Iliad Project for a Registry of ApplicationPackages.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-24T14:50:00Z",
+  "itemClass": "model",
+  "register": "ogc-incubator",
+  "version": "1.0",
+  "sources": [
+    {
+      "title": "OGC API - Records, Part 1, ",
+      "link": "https://docs.ogc.org/is/20-004r1/20-004r1.html"
+    }
+  ],
+  "dependsOn": [
+  ],
+  "tags": [
+    "Records",
+    "Ontology"
+  ],
+  "group": "Ontology",
+  "highlighted": true
+}
