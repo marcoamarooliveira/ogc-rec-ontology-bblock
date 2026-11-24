@@ -1,0 +1,26 @@
+Validation report for ogc.inesctec.ontology.processOntology - OGC Process Ontology
+Generated 2026-11-24T16:25:26.739736+00:00
+=== Files ===
+Using examples/tool_d.u.th_gr_openoil_animation_0.1.0.jsonld from examples
+Output Turtle example_2_1.ttl created
+=== End Files ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - /github/workspace/_sources/processOntology/ontology.ttl
+Validation result for _sources/processOntology/rules.shacl: no results
+Focus nodes for _sources/processOntology/rules.shacl:
+ - Shape apkg-pro:ProcessShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>
+ - Shape apkg-pro:PersonShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/dct:creator,<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/dct:creator,<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/dct:contributor
+ - Shape apkg-pro:ParameterShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasOutput,<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasInput
+ - Shape apkg-pro:OrganisationShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasSourceOrganisation,<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasProducerOrganisation,<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/dct:publisher,<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasSourceOrganisation
+ - Shape _:n40bc5c63e27e4adea4096ddadd760d39b6: *none*
+ - Shape apkg-pro:GeoShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/bf:geographicCoverage/geo:hasGeometry
+ - Shape apkg-pro:SpatialCoverageShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/bf:geographicCoverage
+ - Shape apkg-pro:SecretShape: *none*
+ - Shape apkg-rec:RecordShape: *none*
+ - Shape apkg-pro:CWLDescriptorShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:cwlDescriptor
+ - Shape apkg-pro:ProcessShape/sh:property/sh:or/rdf:first: *none*
+
+=== End SHACL ===
+

@@ -1,0 +1,348 @@
+@prefix apkg-pro: <http://w3id.org/apkg/v2/process#> .
+@prefix apkg-rec: <http://w3id.org/apkg/v2/record#> .
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix cwl: <https://w3id.org/cwl/cwl#> .
+@prefix cwltool: <http://commonwl.org/cwltool#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+apkg-pro:box a owl:DatatypeProperty ;
+    rdfs:label "box"@en ;
+    rdfs:comment "schema.org box syntax. Not schema:box (rdf:Property only)."@en ;
+    rdfs:domain apkg-pro:Geo ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:string ;
+    skos:definition "The bounding box (two lat/long pairs: lower-left and upper-right corners)."@en ;
+    skos:editorialNote "Dropped in v3: replaced by apkg-rec:Geometry with geo:asWKT or geo:asGeoJSON (lon-lat order)."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D16."@en .
+
+apkg-pro:citation a owl:DatatypeProperty ;
+    rdfs:label "citation"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:string ;
+    skos:definition "Citation of a work related to the application package."@en ;
+    skos:editorialNote "In v3 it can become cito:cites pointing to the cited work."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:codeRepository a owl:DatatypeProperty ;
+    rdfs:label "code repository"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:anyURI ;
+    rdfs:seeAlso schema:codeRepository ;
+    skos:definition "URL of the application package code repository."@en ;
+    skos:editorialNote "In v3 it becomes doap:repository with a doap:Repository node."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:cwlDescriptor a owl:ObjectProperty ;
+    rdfs:label "CWL descriptor"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range apkg-pro:CWLDescriptor ;
+    skos:definition "The Application Package as a CWL."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:dateCreated a owl:DatatypeProperty ;
+    rdfs:label "date created"@en ;
+    rdfs:comment "v1 data has both xsd:date and xsd:dateTimeStamp values. No rdfs:range declared because xsd:date is not in the OWL 2 datatype map; the datatype is validated in SHACL."@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    skos:definition "Creation date of the application package (software, not record)."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:defaultValue a owl:DatatypeProperty ;
+    rdfs:label "default value"@en ;
+    rdfs:comment "Plain string because v1 data mixes strings and numbers."@en ;
+    rdfs:domain apkg-pro:Parameter ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:string ;
+    skos:definition "The default value of the parameter."@en ;
+    skos:editorialNote "In v3 it can take the XSD datatype given by the parameter type."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D18."@en .
+
+apkg-pro:descriptorURL a owl:DatatypeProperty ;
+    rdfs:label "descriptor URL"@en ;
+    rdfs:domain apkg-pro:CWLDescriptor ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "The URL of the CWL file."@en ;
+    skos:editorialNote "In v3 it becomes dcat:downloadURL with the URL as an IRI."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D15."@en .
+
+apkg-pro:familyID a owl:DatatypeProperty ;
+    rdfs:label "family identifier"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:string ;
+    rdfs:seeAlso dct:identifier ;
+    skos:definition "Family of this application package (identifier without version)."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:format a owl:DatatypeProperty ;
+    rdfs:label "format"@en ;
+    rdfs:comment "Prefixed EDAM name, e.g. edam:format_3464."@en ;
+    rdfs:domain apkg-pro:Parameter ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:string ;
+    skos:definition "The format of the file (for File parameters)."@en ;
+    skos:editorialNote "In v3 it becomes an object property to the EDAM format IRI."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D18."@en .
+
+apkg-pro:geoClass a owl:DatatypeProperty ;
+    rdfs:label "geo class"@en ;
+    rdfs:comment "Legacy field: the value is always 'schema:GeoShape'."@en ;
+    rdfs:domain apkg-pro:SpatialCoverage ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:string ;
+    skos:definition "The scheme structure of the geo element."@en ;
+    skos:editorialNote "Dropped in v3."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D20."@en .
+
+apkg-pro:hasInput a owl:ObjectProperty ;
+    rdfs:label "has input"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range apkg-pro:Parameter ;
+    rdfs:seeAlso cwl:inputs ;
+    owl:propertyDisjointWith apkg-pro:hasOutput ;
+    skos:definition "Input of the Process."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:hasMaintainer a owl:ObjectProperty ;
+    rdfs:label "has maintainer"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range apkg-pro:Person ;
+    rdfs:seeAlso dct:contributor,
+        doap:maintainer ;
+    skos:definition "Maintainer of the application package."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:hasProducerOrganisation a owl:ObjectProperty ;
+    rdfs:label "has producer organisation"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range apkg-pro:Organisation ;
+    rdfs:subPropertyOf apkg-pro:hasSourceOrganisation ;
+    skos:definition "Main organisation responsible for the tool."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:hasProviderOrganisation a owl:ObjectProperty ;
+    rdfs:label "has provider organisation"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range apkg-pro:Organisation ;
+    skos:definition "The organisation providing the Process as a service."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:hasSecret a owl:ObjectProperty ;
+    rdfs:label "has secret"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range apkg-pro:Secret ;
+    rdfs:seeAlso cwl:hints ;
+    skos:definition "A set of input parameters considered secret."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:homepage a owl:DatatypeProperty ;
+    rdfs:label "homepage"@en ;
+    rdfs:domain apkg-pro:Organisation ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "URL of the webpage of the Organisation."@en ;
+    skos:editorialNote "In v3 it becomes foaf:homepage (inverse functional)."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D17."@en .
+
+apkg-pro:isLatestVersion a owl:DatatypeProperty ;
+    rdfs:label "is latest version"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:boolean ;
+    skos:definition "This is the latest version of the application package."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:originalURL a owl:DatatypeProperty ;
+    rdfs:label "original URL"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "Original URL of the application package when registered."@en ;
+    skos:editorialNote "In v3 it becomes pav:retrievedFrom."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:parameterKeyword a owl:DatatypeProperty ;
+    rdfs:label "parameter keyword"@en ;
+    rdfs:comment "Not dcat:keyword, whose domain dcat:Resource would infer every parameter as a DCAT resource."@en ;
+    rdfs:domain apkg-pro:Parameter ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:string ;
+    rdfs:seeAlso dcat:keyword ;
+    skos:definition "A keyword (tag) associated with the parameter."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D18."@en .
+
+apkg-pro:parameterType a owl:DatatypeProperty ;
+    rdfs:label "parameter type"@en ;
+    rdfs:comment "A trailing '?' marks an optional parameter in CWL. Not dct:type, whose range rdfs:Class would turn the literal values into classes."@en ;
+    rdfs:domain apkg-pro:Parameter ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:string ;
+    skos:definition "The type of data of the parameter."@en ;
+    skos:editorialNote "In v3 it follows CWL (sld:type)."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D18."@en .
+
+apkg-pro:processClass a owl:DatatypeProperty ;
+    rdfs:label "process class"@en ;
+    rdfs:comment "Plain string because of v1 data. Not dct:type, which is used for the record type."@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:string ;
+    skos:definition "Class of the Process (CommandLineTool or Workflow)."@en ;
+    skos:editorialNote "In v3 it becomes rdf:type cwl:CommandLineTool / cwl:Workflow."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:processID a owl:DatatypeProperty ;
+    rdfs:label "process identifier"@en ;
+    rdfs:comment "dct:identifier is already used for the record id, which a Process also inherits."@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:string ;
+    rdfs:seeAlso dct:identifier ;
+    skos:definition "Unique identifier of the process."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:programmingLanguage a owl:DatatypeProperty ;
+    rdfs:label "programming language"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:string ;
+    rdfs:seeAlso doap:programming-language,
+        schema:programmingLanguage ;
+    skos:definition "Programming language of the application package."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:registrationDate a owl:DatatypeProperty ;
+    rdfs:label "registration date"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:dateTimeStamp ;
+    rdfs:seeAlso dct:dateSubmitted ;
+    skos:definition "The registration date of the application package."@en ;
+    skos:editorialNote "In v3 it becomes prov:endedAtTime on a Registry activity."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:secretInputID a owl:DatatypeProperty ;
+    rdfs:label "secret input identifier"@en ;
+    rdfs:domain apkg-pro:Secret ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:string ;
+    rdfs:seeAlso cwltool:secrets ;
+    skos:definition "The id of an input parameter considered secret."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D21."@en .
+
+apkg-pro:temporalCoverage a owl:DatatypeProperty ;
+    rdfs:label "temporal coverage"@en ;
+    rdfs:comment "Plain string (ISO 8601 date or interval) because of v1 data. Distinct from the Record time property (time:hasTime)."@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range xsd:string ;
+    skos:definition "The period that the content applies to (single date or date range)."@en ;
+    skos:editorialNote "In v3 it becomes time:hasTime with time:TemporalEntity."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:Geo a owl:Class ;
+    rdfs:label "Geo"@en ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:subClassOf geo:Geometry ;
+    skos:definition "The bounding box of a spatial coverage (schema.org GeoShape box)."@en ;
+    skos:editorialNote "Dropped in v3 (replaced by apkg-rec:Geometry)."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D16."@en .
+
+apkg-pro:Person a owl:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:subClassOf foaf:Person ;
+    skos:definition "A Person."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D19."@en .
+
+apkg-pro:SpatialCoverage a owl:Class ;
+    rdfs:label "Spatial coverage"@en ;
+    rdfs:comment "Inferred as geo:Feature (domain of geo:hasGeometry)."@en ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:subClassOf bf:GeographicCoverage ;
+    skos:definition "The Spatial Coverage of the Process."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D20."@en .
+
+apkg-pro:hasOutput a owl:ObjectProperty ;
+    rdfs:label "has output"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range apkg-pro:Parameter ;
+    rdfs:seeAlso cwl:outputs ;
+    skos:definition "Output of the Process."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:hasSourceOrganisation a owl:ObjectProperty ;
+    rdfs:label "has source organisation"@en ;
+    rdfs:domain apkg-pro:Process ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:range apkg-pro:Organisation ;
+    skos:definition "Organisation responsible for creating or maintaining the tool."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+apkg-pro:CWLDescriptor a owl:Class ;
+    rdfs:label "CWL descriptor"@en ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:subClassOf dcat:Distribution ;
+    skos:definition "The CWL descriptor of the application package."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D15."@en .
+
+apkg-pro:Secret a owl:Class ;
+    rdfs:label "Secret"@en ;
+    rdfs:comment "Represents a cwltool:Secrets hint as a whole."@en ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:subClassOf cwltool:Secrets ;
+    skos:definition "The input items that must be kept secret."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D21."@en .
+
+apkg-pro:Organisation a owl:Class ;
+    rdfs:label "Organisation"@en ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:subClassOf org:Organization ;
+    skos:definition "An Organisation."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D17."@en .
+
+apkg-pro:Parameter a owl:Class ;
+    rdfs:label "Parameter"@en ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:subClassOf cwl:Parameter ;
+    skos:definition "The Parameter of the Input or Output of the Process."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) D18."@en .
+
+apkg-pro:Process a owl:Class ;
+    rdfs:label "Process"@en ;
+    rdfs:isDefinedBy <http://w3id.org/apkg/v2/process> ;
+    rdfs:subClassOf apkg-rec:Record,
+        cwl:Process ;
+    skos:definition "A Process: an information artefact that specifies a computation, as distinct from any execution of it."@en ;
+    skos:scopeNote "APKG-LDAP v2, Table(s) C14."@en .
+
+<http://w3id.org/apkg/v2/process> a owl:Ontology ;
+    dct:created "2026-11-21"^^xsd:date ;
+    dct:description "Classes and properties of the Process module of the APKG Linked Data Application Profile v2 (tables C and D). Imports the Record module: apkg-pro:Process is a subclass of apkg-rec:Record."@en ;
+    dct:rightsHolder "INESC TEC" ;
+    dct:title "APKG-LDAP ontology - Process module (apkg-pro)"@en ;
+    owl:imports <http://w3id.org/apkg/v2/declarations>,
+        <http://w3id.org/apkg/v2/record> ;
+    owl:versionIRI <http://w3id.org/apkg/v2/process/2.0> ;
+    owl:versionInfo "2.0" .
+

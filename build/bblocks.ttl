@@ -1,0 +1,136 @@
+@prefix bblocks: <https://www.opengis.net/def/bblocks/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <http://www.w3.org/ns/oa#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix schema: <https://schema.org/> .
+@prefix shacl: <https://www.w3.org/TR/shacl/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://docs.ogc.org/is/18-062r2/18-062r2.html> rdfs:label "OGC API - Process, Part 1, " .
+
+<https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/bblocks.ttl> a prov:Entity ;
+    dct:format "text/turtle" ;
+    prov:wasAttributedTo _:N45ee417f9e0d469d9bfa2f7a5acfdf88 ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            prov:endedAtTime "2026-11-24T16:25:26.939790"^^xsd:dateTime ;
+            prov:startedAtTime "2026-11-24T16:25:26.774513"^^xsd:dateTime ;
+            prov:used [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:5af33319ff6302b999e68c451f2d23286b9316f4" ;
+                    rdfs:seeAlso <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/register.json> ],
+                [ a prov:Entity ;
+                    dct:format "application/yaml" ;
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
+            prov:wasAssociatedWith _:N45ee417f9e0d469d9bfa2f7a5acfdf88 ] .
+
+<bblocks://ogc.inesctec.ontology.processOntology> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Model ;
+    rdfs:label "OGC Process Ontology" ;
+    dct:abstract "This Building Block represents the Ontology for the OGC API Processes schema, based on the results of the Iliad Project for a Registry of ApplicationPackages."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2026-11-24T14:50:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/generateddocs/json-full/inesctec/ontology/processOntology/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/generateddocs/markdown/inesctec/ontology/processOntology/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/bblock/ogc.inesctec.ontology.processOntology> ] ;
+    dct:hasVersion "1.0" ;
+    dct:modified "2026-11-24"^^xsd:date ;
+    dct:source <https://docs.ogc.org/is/18-062r2/18-062r2.html>,
+        <https://docs.ogc.org/is/20-004r1/20-004r1.html> ;
+    skos:inScheme <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/> ;
+    skos:prefLabel "OGC Process Ontology" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/> ;
+    dcat:keyword "Ontology",
+        "Records" ;
+    prof:hasResource [ dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/annotated/inesctec/ontology/processOntology/ontology.ttl> ;
+            prof:hasRole role:specification ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.inesctec.ontology.processOntology> ;
+            prof:hasArtifact <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/_sources/processOntology/rules.shacl> ;
+            prof:hasRole role:validation ] ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed false .
+
+<bblocks://ogc.inesctec.ontology.recordOntology> a skos:Concept,
+        dcat:Dataset,
+        bblocks:BBlock,
+        bblocks:Model ;
+    rdfs:label "OGC Record Ontology" ;
+    dct:abstract "This Building Block represents the Ontology for the OGC API Records schema, based on the results of the Iliad Project for a Registry of ApplicationPackages."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:created "2026-11-24T14:50:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/generateddocs/markdown/inesctec/ontology/recordOntology/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/generateddocs/json-full/inesctec/ontology/recordOntology/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/bblock/ogc.inesctec.ontology.recordOntology> ] ;
+    dct:hasVersion "1.0" ;
+    dct:modified "2026-11-24"^^xsd:date ;
+    dct:source <https://docs.ogc.org/is/20-004r1/20-004r1.html> ;
+    skos:inScheme <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/> ;
+    skos:prefLabel "OGC Record Ontology" ;
+    skos:topConceptOf <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/> ;
+    dcat:keyword "Ontology",
+        "Records" ;
+    prof:hasResource [ dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/annotated/inesctec/ontology/recordOntology/ontology.ttl> ;
+            prof:hasRole role:specification ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.inesctec.ontology.recordOntology> ;
+            prof:hasArtifact <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/_sources/recordOntology/rules.shacl> ;
+            prof:hasRole role:validation ] ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> ;
+    bblocks:validationPassed true .
+
+<https://docs.ogc.org/is/20-004r1/20-004r1.html> rdfs:label "OGC API - Records, Part 1, " .
+
+<https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/> a skos:ConceptScheme,
+        dcat:Catalog,
+        bblocks:BBlocksRegister ;
+    rdfs:label "Building Blocks - INESC TEC OGC Records Ontology Building Block repository" ;
+    dct:abstract """TBD.
+"""^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:description """TBD.
+"""^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:modified "2026-11-24T16:25:26.431529"^^xsd:dateTime ;
+    owl:imports <https://opengeospatial.github.io/bblocks/register.json> ;
+    skos:hasTopConcept <bblocks://ogc.inesctec.ontology.processOntology>,
+        <bblocks://ogc.inesctec.ontology.recordOntology> ;
+    skos:prefLabel "Building Blocks - INESC TEC OGC Records Ontology Building Block repository" ;
+    prof:hasResource [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
+            dct:type "text/turtle" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/bblocks.ttl> ],
+        [ rdfs:label "This Building Blocks Register in JSON format" ;
+            dct:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/register.json> ],
+        [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
+            dct:type "application/ld+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/bblocks.jsonld> ] ;
+    foaf:homepage <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/> ;
+    bblocks:hasValidationReport <https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/tests/report.html> .
+
+_:N45ee417f9e0d469d9bfa2f7a5acfdf88 a prov:Agent,
+        schema:SoftwareApplication ;
+    rdfs:label "OGC-NA tools" ;
+    dct:hasVersion "0.6.0" ;
+    rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> .
+

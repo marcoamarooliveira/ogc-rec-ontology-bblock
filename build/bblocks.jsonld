@@ -1,0 +1,427 @@
+{
+  "@context": [
+    {
+      "@base": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master"
+    },
+    {
+      "bblocks": "https://www.opengis.net/def/bblocks/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "dct": "http://purl.org/dc/terms/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "prof": "http://www.w3.org/ns/dx/prof/",
+      "dcat": "http://www.w3.org/ns/dcat#",
+      "modspec": "http://www.opengis.net/def/ont/modspec/",
+      "void": "http://rdfs.org/ns/void#",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "role": "http://www.w3.org/ns/dx/prof/role/",
+      "shacl": "https://www.w3.org/TR/shacl/",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "baseURL": "@id",
+      "name": "rdfs:label",
+      "abstract": {
+        "@id": "dct:abstract",
+        "@type": "https://www.w3.org/ns/iana/media-types/text/markdown"
+      },
+      "description": {
+        "@id": "dct:description",
+        "@type": "https://www.w3.org/ns/iana/media-types/text/markdown"
+      },
+      "status": {
+        "@id": "bblocks:status",
+        "@type": "@id",
+        "@context": {
+          "@base": "http://www.opengis.net/def/status/"
+        }
+      },
+      "dateTimeAddition": {
+        "@id": "dct:created",
+        "@type": "xsd:dateTime"
+      },
+      "version": "dct:hasVersion",
+      "dateOfLastChange": {
+        "@id": "dct:modified",
+        "@type": "xsd:date"
+      },
+      "modified": {
+        "@id": "dct:modified",
+        "@type": "xsd:dateTime"
+      },
+      "scope": {
+        "@id": "bblocks:scope",
+        "@type": "@id",
+        "@context": {
+          "@base": "http://www.opengis.net/def/bblocks/scope/"
+        }
+      },
+      "sources": {
+        "@id": "dct:source",
+        "@context": {
+          "title": "rdfs:label",
+          "link": "@id"
+        }
+      },
+      "license": {
+        "@id": "dct:license",
+        "@context": {
+          "name": "rdfs:label",
+          "url": {
+            "@id": "rdfs:seeAlso",
+            "@type": "@id"
+          }
+        }
+      },
+      "schema": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "ldContext": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "sourceLdContext": {
+        "@id": "bblocks:hasSourceJsonLdContext",
+        "@type": "@id"
+      },
+      "documentation": {
+        "@id": "dct:description",
+        "@type": "@id",
+        "@container": "@index",
+        "@index": "dct:identifier",
+        "@context": {
+          "mediatype": "dct:format",
+          "url": {
+            "@id": "rdfs:isDefinedBy",
+            "@type": "@id"
+          }
+        }
+      },
+      "rdfs:isDefinedBy": {
+        "@type": "@id"
+      },
+      "hasConcepts": {
+        "@reverse": "skos:inScheme"
+      },
+      "dependsOn": {
+        "@id": "bblocks:dependsOn",
+        "@type": "@id"
+      },
+      "isProfileOf": {
+        "@id": "prof:isProfileOf",
+        "@type": "@id"
+      },
+      "isDescribedBy": {
+        "@id": "http://www.iana.org/assignments/relation/describedby",
+        "@type": "@id"
+      },
+      "hasFormat": {
+        "@id": "dct:hasFormat",
+        "@type": "@id"
+      },
+      "seeAlso": {
+        "@id": "rdfs:seeAlso",
+        "@type": "@id"
+      },
+      "tags": "dcat:keyword",
+      "shaclShapes": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "validationReport": {
+        "@id": "bblocks:hasValidationReport",
+        "@type": "@id"
+      },
+      "validationPassed": "bblocks:validationPassed",
+      "imports": {
+        "@id": "owl:imports",
+        "@type": "@id"
+      },
+      "conformanceClasses": {
+        "@id": "modspec:class",
+        "@type": "@id"
+      },
+      "requirementClasses": {
+        "@id": "modspec:requirementsClass",
+        "@type": "@id"
+      },
+      "sparqlEndpoint": {
+        "@id": "void:sparqlEndpoint",
+        "@type": "@id"
+      },
+      "viewerURL": {
+        "@id": "foaf:homepage",
+        "@type": "@id"
+      },
+      "dct:conformsTo": {
+        "@type": "@id"
+      },
+      "prof:hasRole": {
+        "@type": "@id"
+      },
+      "prof:hasArtifact": {
+        "@type": "@id"
+      },
+      "rdfs:seeAlso": {
+        "@type": "@id"
+      },
+      "ontology": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "rdfData": {
+        "@id": "prof:hasResource",
+        "@type": "@id"
+      },
+      "links": {
+        "@id": "prof:hasResource",
+        "@context": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"
+      },
+      "concept": {
+        "@id": "skos:closeMatch",
+        "@type": "@id"
+      },
+      "rdfType": {
+        "@id": "rdfs:subClassOf",
+        "@type": "@id"
+      },
+      "resources": {
+        "@id": "prof:hasResource",
+        "@context": {
+          "role": {
+            "@id": "prof:hasRole",
+            "@type": "@id"
+          },
+          "constraints": "role:constraints",
+          "example": "role:example",
+          "guidance": "role:guidance",
+          "mapping": "role:mapping",
+          "schema": "role:schema",
+          "specification": "role:specification",
+          "validation": "role:validation",
+          "vocabulary": "role:vocabulary",
+          "data": "role:data",
+          "ref": {
+            "@id": "prof:hasArtifact",
+            "@type": "@id"
+          },
+          "format": "dct:format",
+          "conformsTo": {
+            "@id": "dct:conformsTo",
+            "@type": "@id"
+          }
+        }
+      }
+    }
+  ],
+  "metaRegistry": "https://w3id.org/ogc/bblocks/meta-register.json",
+  "name": "Building Blocks - INESC TEC OGC Records Ontology Building Block repository",
+  "abstract": "TBD.\n",
+  "description": "TBD.\n",
+  "modified": "2026-11-24T16:25:26.431529",
+  "tooling": {
+    "bblocks-postprocess": {
+      "commitId": "\"61523b7930e440b7e6e6bc03cb1b104d5d01f3f5",
+      "shortCommitId": "\"61523b",
+      "date": "2026-11-23T13:04:26+00:00\""
+    }
+  },
+  "gitRepository": "https://github.com/marcoamarooliveira/ogc-rec-ontology-bblock",
+  "gitHubRepository": "https://github.com/marcoamarooliveira/ogc-rec-ontology-bblock/blob/master/",
+  "baseURL": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/",
+  "viewerURL": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/",
+  "validationReport": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/tests/report.html",
+  "validationReportJson": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/tests/report.json",
+  "imports": [
+    "https://opengeospatial.github.io/bblocks/register.json"
+  ],
+  "remoteCacheDir": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/annotated/_cache",
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/register.json",
+      "type": "application/json",
+      "title": "This Building Blocks Register in JSON format"
+    },
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/bblocks.ttl",
+      "type": "text/turtle",
+      "title": "This Building Blocks Register in RDF Turtle format"
+    },
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/bblocks.jsonld",
+      "type": "application/ld+json",
+      "title": "This Building Blocks Register in JSON-LD format"
+    }
+  ],
+  "@type": [
+    "skos:ConceptScheme",
+    "dcat:Catalog",
+    "bblocks:BBlocksRegister"
+  ],
+  "skos:prefLabel": "Building Blocks - INESC TEC OGC Records Ontology Building Block repository",
+  "hasConcepts": [
+    {
+      "itemIdentifier": "ogc.inesctec.ontology.processOntology",
+      "name": "OGC Process Ontology",
+      "abstract": "This Building Block represents the Ontology for the OGC API Processes schema, based on the results of the Iliad Project for a Registry of ApplicationPackages.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-24T14:50:00Z",
+      "itemClass": "model",
+      "register": "ogc-incubator",
+      "version": "1.0",
+      "sources": [
+        {
+          "title": "OGC API - Records, Part 1, ",
+          "link": "https://docs.ogc.org/is/20-004r1/20-004r1.html"
+        },
+        {
+          "title": "OGC API - Process, Part 1, ",
+          "link": "https://docs.ogc.org/is/18-062r2/18-062r2.html"
+        }
+      ],
+      "dependsOn": null,
+      "tags": [
+        "Records",
+        "Ontology"
+      ],
+      "group": "Ontology",
+      "highlighted": true,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/_sources/processOntology/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.inesctec.ontology.processOntology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
+      "dateOfLastChange": "2026-11-24",
+      "ontology": {
+        "prof:hasArtifact": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/annotated/inesctec/ontology/processOntology/ontology.ttl",
+        "prof:hasRole": "role:specification",
+        "dct:format": "text/turtle",
+        "dct:conformsTo": "http://www.w3.org/2002/07/owl#Ontology"
+      },
+      "sourceFiles": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/_sources/processOntology/",
+      "validationPassed": false,
+      "testOutputs": "https://github.com/marcoamarooliveira/ogc-rec-ontology-bblock/blob/master/build/tests/inesctec/ontology/processOntology/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/generateddocs/json-full/inesctec/ontology/processOntology/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/generateddocs/markdown/inesctec/ontology/processOntology/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/bblock/ogc.inesctec.ontology.processOntology"
+        }
+      },
+      "@id": "bblocks://ogc.inesctec.ontology.processOntology",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "OGC Process Ontology",
+      "ldContext": null,
+      "schema": null,
+      "openAPIDocument": null,
+      "rdfData": [],
+      "isProfileOf": null,
+      "isDescribedBy": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/"
+      }
+    },
+    {
+      "itemIdentifier": "ogc.inesctec.ontology.recordOntology",
+      "name": "OGC Record Ontology",
+      "abstract": "This Building Block represents the Ontology for the OGC API Records schema, based on the results of the Iliad Project for a Registry of ApplicationPackages.",
+      "status": "under-development",
+      "dateTimeAddition": "2026-11-24T14:50:00Z",
+      "itemClass": "model",
+      "register": "ogc-incubator",
+      "version": "1.0",
+      "sources": [
+        {
+          "title": "OGC API - Records, Part 1, ",
+          "link": "https://docs.ogc.org/is/20-004r1/20-004r1.html"
+        }
+      ],
+      "dependsOn": null,
+      "tags": [
+        "Records",
+        "Ontology"
+      ],
+      "group": "Ontology",
+      "highlighted": true,
+      "shaclShapes": [
+        {
+          "prof:hasArtifact": [
+            "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/_sources/recordOntology/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.inesctec.ontology.recordOntology",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        }
+      ],
+      "dateOfLastChange": "2026-11-24",
+      "ontology": {
+        "prof:hasArtifact": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/annotated/inesctec/ontology/recordOntology/ontology.ttl",
+        "prof:hasRole": "role:specification",
+        "dct:format": "text/turtle",
+        "dct:conformsTo": "http://www.w3.org/2002/07/owl#Ontology"
+      },
+      "sourceFiles": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/_sources/recordOntology/",
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/generateddocs/json-full/inesctec/ontology/recordOntology/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/generateddocs/markdown/inesctec/ontology/recordOntology/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/bblock/ogc.inesctec.ontology.recordOntology"
+        }
+      },
+      "@id": "bblocks://ogc.inesctec.ontology.recordOntology",
+      "@type": [
+        "bblocks:Model",
+        "skos:Concept",
+        "dcat:Dataset",
+        "bblocks:BBlock"
+      ],
+      "skos:prefLabel": "OGC Record Ontology",
+      "ldContext": null,
+      "schema": null,
+      "openAPIDocument": null,
+      "rdfData": [],
+      "isProfileOf": null,
+      "isDescribedBy": null,
+      "skos:topConceptOf": {
+        "@id": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/"
+      }
+    }
+  ],
+  "skos:hasTopConcept": [
+    {
+      "@id": "bblocks://ogc.inesctec.ontology.processOntology"
+    },
+    {
+      "@id": "bblocks://ogc.inesctec.ontology.recordOntology"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+Validation report for ogc.inesctec.ontology.processOntology - OGC Process Ontology
+Generated 2026-11-24T16:25:26.661320+00:00
+=== Files ===
+Using examples/tool_d.u.th_gr_openoil_animation_0.1.0.json from examples
+=== End Files ===
+

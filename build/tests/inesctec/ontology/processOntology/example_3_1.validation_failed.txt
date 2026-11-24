@@ -1,0 +1,38 @@
+Validation report for ogc.inesctec.ontology.processOntology - OGC Process Ontology
+Generated 2026-11-24T16:25:26.746476+00:00
+=== Unknown errors ===
+
+** Validation error **
+Traceback (most recent call last):
+,  File "/usr/local/lib/python3.12/xml/sax/expatreader.py", line 211, in feed
+    self._parser.Parse(data, isFinal)
+,xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 0
+,
+During handling of the above exception, another exception occurred:
+
+,Traceback (most recent call last):
+,  File "/src/ogc/bblocks/validate.py", line 353, in _validate_resource
+    result = validator.validate(filename, output_filename, report,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+,  File "/src/ogc/bblocks/validation/rdf.py", line 628, in validate
+    graph = self._load_graph(filename, output_filename, report,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+,  File "/src/ogc/bblocks/validation/rdf.py", line 583, in _load_graph
+    graph = Graph().parse(data=contents, format=rdf_format,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+,  File "/venv/lib/python3.12/site-packages/rdflib/graph.py", line 1494, in parse
+    parser.parse(source, self, **args)
+,  File "/venv/lib/python3.12/site-packages/rdflib/plugins/parsers/rdfxml.py", line 647, in parse
+    self._parser.parse(source)
+,  File "/usr/local/lib/python3.12/xml/sax/expatreader.py", line 105, in parse
+    xmlreader.IncrementalParser.parse(self, source)
+,  File "/usr/local/lib/python3.12/xml/sax/xmlreader.py", line 124, in parse
+    self.feed(buffer)
+,  File "/usr/local/lib/python3.12/xml/sax/expatreader.py", line 215, in feed
+    self._err_handler.fatalError(exc)
+,  File "/usr/local/lib/python3.12/xml/sax/handler.py", line 38, in fatalError
+    raise exception
+,xml.sax._exceptions.SAXParseException: <unknown>:1:0: not well-formed (invalid token)
+
+=== End Unknown errors ===
+

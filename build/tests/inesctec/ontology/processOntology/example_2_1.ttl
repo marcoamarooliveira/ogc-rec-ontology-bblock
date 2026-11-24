@@ -1,0 +1,141 @@
+@prefix apkg-pro: <http://w3id.org/apkg/v2/process#> .
+@prefix apkg-rec: <http://w3id.org/apkg/v2/record#> .
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0> a apkg-pro:Process,
+        apkg-rec:Record ;
+    bf:geographicCoverage [ a apkg-pro:SpatialCoverage ;
+            apkg-pro:geoClass "schema:GeoShape" ;
+            geo:hasGeometry [ a apkg-pro:Geo ;
+                    apkg-pro:box "-90 -180 90 180" ] ] ;
+    dct:contributor [ a apkg-pro:Person ;
+            vcard:hasEmail [ a apkg-rec:Email ;
+                    vcard:value "miguel.r.correia@inesctec.pt" ] ;
+            foaf:name "Miguel Correia" ] ;
+    dct:creator [ a apkg-pro:Person ;
+            vcard:hasEmail [ a apkg-rec:Email ;
+                    vcard:value "nikolaoskokkos@gmail.com" ] ;
+            foaf:name "Nikolaos Kokkos" ],
+        [ a apkg-pro:Person ;
+            vcard:hasEmail [ a apkg-rec:Email ;
+                    vcard:value "gsylaios@env.duth.gr" ] ;
+            foaf:name "Georgios Sylaios" ] ;
+    dct:description "Animation of oil spill simulation" ;
+    dct:identifier "urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0" ;
+    dct:publisher [ a apkg-pro:Organisation ;
+            apkg-pro:homepage "https://iliad-registry.inesctec.pt"^^xsd:anyURI ;
+            skos:prefLabel "Application Package Registry" ] ;
+    dct:title "openoil_animation" ;
+    pav:version "0.1.0" ;
+    apkg-pro:cwlDescriptor [ a apkg-pro:CWLDescriptor ;
+            apkg-pro:descriptorURL "https://iliad-registry.inesctec.pt/collections/apkg/items/urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0?f=cwl"^^xsd:anyURI ;
+            apkg-rec:mediaType "application/cwl+yaml" ] ;
+    apkg-pro:dateCreated "2025-11-14T22:12:16Z"^^xsd:dateTimeStamp ;
+    apkg-pro:familyID "urn:apkg:tool:d.u.th:gr:openoil_animation" ;
+    apkg-pro:hasInput [ a apkg-pro:Parameter ;
+            dct:description "The netcdf file containing the simulation results" ;
+            dct:identifier "file" ;
+            apkg-pro:format "edam:format_3650" ;
+            apkg-pro:parameterType "File" ] ;
+    apkg-pro:hasOutput [ a apkg-pro:Parameter ;
+            dct:identifier "animation" ;
+            apkg-pro:format "edam:format_3467" ;
+            apkg-pro:parameterType "File" ] ;
+    apkg-pro:hasProducerOrganisation [ a apkg-pro:Organisation ;
+            apkg-pro:homepage "https://env.duth.gr"^^xsd:anyURI ;
+            skos:prefLabel "D.U.TH" ;
+            vcard:hasAddress [ a apkg-rec:Address ;
+                    vcard:country-name "GR" ] ] ;
+    apkg-pro:hasSourceOrganisation [ a apkg-pro:Organisation ;
+            apkg-pro:homepage "https://inesctec.pt"^^xsd:anyURI ;
+            skos:prefLabel "INESCTEC" ;
+            vcard:hasAddress [ a apkg-rec:Address ;
+                    vcard:country-name "PT" ] ],
+        [ a apkg-pro:Organisation ;
+            apkg-pro:homepage "https://env.duth.gr"^^xsd:anyURI ;
+            skos:prefLabel "D.U.TH" ;
+            vcard:hasAddress [ a apkg-rec:Address ;
+                    vcard:country-name "GR" ] ] ;
+    apkg-pro:isLatestVersion false ;
+    apkg-pro:originalURL "https://pipe-drive.inesctec.pt/application-packages/tools/openoil-animation-duth/openoil_animation_duth_0_1_0.cwl"^^xsd:anyURI ;
+    apkg-pro:processClass "CommandLineTool" ;
+    apkg-pro:processID "urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0" ;
+    apkg-pro:programmingLanguage "python" ;
+    apkg-pro:registrationDate "2025-11-14T22:15:36.109Z"^^xsd:dateTimeStamp ;
+    geo:hasGeometry [ a apkg-rec:Geometry ;
+            apkg-rec:coordinates "[[[-180.0,-90.0],[180.0,-90.0],[180.0,90.0],[-180.0,90.0],[-180.0,-90.0]]]" ;
+            apkg-rec:geometryType "Polygon" ] ;
+    dcat:keyword "animation",
+        "oil spill",
+        "opendrift",
+        "openoil",
+        "simulation" ;
+    dcat:qualifiedRelation [ a apkg-rec:Link ;
+            dct:title "All versions of this document as RDF (JSON-LD)" ;
+            apkg-rec:href "https://iliad-registry.inesctec.pt/collections/apkg/items?f=jsonld&family=%22urn:apkg:tool:d.u.th:gr:openoil_animation%22&sortby=-software_version"^^xsd:anyURI ;
+            apkg-rec:mediaType "application/json" ;
+            apkg-rec:rel "alternate" ],
+        [ a apkg-rec:Link ;
+            dct:title "This document as GeoJSON" ;
+            apkg-rec:href "https://iliad-registry.inesctec.pt/collections/apkg/items/urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0?f=json"^^xsd:anyURI ;
+            apkg-rec:mediaType "application/geo+json" ;
+            apkg-rec:rel "self" ],
+        [ a apkg-rec:Link ;
+            dct:title "This document as CWL (YAML)" ;
+            apkg-rec:href "https://iliad-registry.inesctec.pt/collections/apkg/items/urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0?f=cwl"^^xsd:anyURI ;
+            apkg-rec:mediaType "application/cwl+yaml" ;
+            apkg-rec:rel "alternate" ],
+        [ a apkg-rec:Link ;
+            dct:title "This document as CWL (JSON)" ;
+            apkg-rec:href "https://iliad-registry.inesctec.pt/collections/apkg/items/urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0?f=cwljson"^^xsd:anyURI ;
+            apkg-rec:mediaType "application/cwl+json" ;
+            apkg-rec:rel "alternate" ],
+        [ a apkg-rec:Link ;
+            dct:title "All versions of this document as HTML" ;
+            apkg-rec:href "https://iliad-registry.inesctec.pt/collections/apkg/items?family=%22urn:apkg:tool:d.u.th:gr:openoil_animation%22&sortby=-software_version"^^xsd:anyURI ;
+            apkg-rec:mediaType "text/html" ;
+            apkg-rec:rel "alternate" ],
+        [ a apkg-rec:Link ;
+            dct:title "This document as RDF (JSON-LD)" ;
+            apkg-rec:href "https://iliad-registry.inesctec.pt/collections/apkg/items/urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0?f=jsonld"^^xsd:anyURI ;
+            apkg-rec:mediaType "application/ld+json" ;
+            apkg-rec:rel "alternate" ],
+        [ a apkg-rec:Link ;
+            dct:title "The landing page of this server as JSON" ;
+            apkg-rec:href "https://iliad-registry.inesctec.pt?f=json"^^xsd:anyURI ;
+            apkg-rec:mediaType "application/json" ;
+            apkg-rec:rel "root" ],
+        [ a apkg-rec:Link ;
+            dct:title "This document as HTML" ;
+            apkg-rec:href "https://iliad-registry.inesctec.pt/collections/apkg/items/urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0?f=html"^^xsd:anyURI ;
+            apkg-rec:mediaType "text/html" ;
+            apkg-rec:rel "alternate" ],
+        [ a apkg-rec:Link ;
+            dct:title "Application Packages" ;
+            apkg-rec:href "https://iliad-registry.inesctec.pt/collections/apkg"^^xsd:anyURI ;
+            apkg-rec:mediaType "application/json" ;
+            apkg-rec:rel "collection" ],
+        [ a apkg-rec:Link ;
+            dct:title "The landing page of this server as HTML" ;
+            apkg-rec:href "https://iliad-registry.inesctec.pt?f=html"^^xsd:anyURI ;
+            apkg-rec:mediaType "text/html" ;
+            apkg-rec:rel "root" ],
+        [ a apkg-rec:Link ;
+            dct:title "All versions of this document as JSON" ;
+            apkg-rec:href "https://iliad-registry.inesctec.pt/collections/apkg/items?f=json&family=%22urn:apkg:tool:d.u.th:gr:openoil_animation%22&sortby=-software_version"^^xsd:anyURI ;
+            apkg-rec:mediaType "application/json" ;
+            apkg-rec:rel "alternate" ],
+        [ a apkg-rec:Link ;
+            dct:title "This document as RDF (JSON-LD) APKG V2" ;
+            apkg-rec:href "https://iliad-registry.inesctec.pt/collections/apkg/items/urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0?f=jsonld_v2"^^xsd:anyURI ;
+            apkg-rec:mediaType "application/ld+json" ;
+            apkg-rec:rel "alternate" ] .
+

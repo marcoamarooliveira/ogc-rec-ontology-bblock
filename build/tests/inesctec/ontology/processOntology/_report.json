@@ -1,0 +1,177 @@
+{
+  "title": "Validation report for ogc.inesctec.ontology.processOntology - OGC Process Ontology",
+  "bblockName": "OGC Process Ontology",
+  "bblockId": "ogc.inesctec.ontology.processOntology",
+  "generated": "2026-11-24T16:25:26.746518+00:00",
+  "result": false,
+  "items": [
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/inesctec/ontology/processOntology/example_1_1.json",
+        "url": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/tests/inesctec/ontology/processOntology/example_1_1.json",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "hasWarnings": false,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using examples/tool_d.u.th_gr_openoil_animation_0.1.0.json from examples"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/inesctec/ontology/processOntology/example_2_1.jsonld",
+        "url": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/tests/inesctec/ontology/processOntology/example_2_1.jsonld",
+        "exampleIndex": 2,
+        "snippetIndex": 1,
+        "language": "application/ld+json"
+      },
+      "result": true,
+      "hasWarnings": false,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using examples/tool_d.u.th_gr_openoil_animation_0.1.0.jsonld from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_2_1.ttl",
+              "size": 159,
+              "isError": false,
+              "message": "Output Turtle example_2_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - /github/workspace/_sources/processOntology/ontology.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/processOntology/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/processOntology/rules.shacl: no results"
+            },
+            {
+              "shaclFile": "_sources/processOntology/rules.shacl",
+              "focusNodes": {
+                "apkg-pro:ProcessShape": {
+                  "nodes": [
+                    "<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>"
+                  ]
+                },
+                "apkg-pro:PersonShape": {
+                  "nodes": [
+                    "<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/dct:creator",
+                    "<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/dct:creator",
+                    "<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/dct:contributor"
+                  ]
+                },
+                "apkg-pro:ParameterShape": {
+                  "nodes": [
+                    "<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasOutput",
+                    "<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasInput"
+                  ]
+                },
+                "apkg-pro:OrganisationShape": {
+                  "nodes": [
+                    "<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasSourceOrganisation",
+                    "<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasProducerOrganisation",
+                    "<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/dct:publisher",
+                    "<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasSourceOrganisation"
+                  ]
+                },
+                "_:n40bc5c63e27e4adea4096ddadd760d39b6": {
+                  "nodes": []
+                },
+                "apkg-pro:GeoShape": {
+                  "nodes": [
+                    "<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/bf:geographicCoverage/geo:hasGeometry"
+                  ]
+                },
+                "apkg-pro:SpatialCoverageShape": {
+                  "nodes": [
+                    "<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/bf:geographicCoverage"
+                  ]
+                },
+                "apkg-pro:SecretShape": {
+                  "nodes": []
+                },
+                "apkg-rec:RecordShape": {
+                  "nodes": []
+                },
+                "apkg-pro:CWLDescriptorShape": {
+                  "nodes": [
+                    "<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:cwlDescriptor"
+                  ]
+                },
+                "apkg-pro:ProcessShape/sh:property/sh:or/rdf:first": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/processOntology/rules.shacl:\n - Shape apkg-pro:ProcessShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>\n - Shape apkg-pro:PersonShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/dct:creator,<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/dct:creator,<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/dct:contributor\n - Shape apkg-pro:ParameterShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasOutput,<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasInput\n - Shape apkg-pro:OrganisationShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasSourceOrganisation,<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasProducerOrganisation,<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/dct:publisher,<urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:hasSourceOrganisation\n - Shape _:n40bc5c63e27e4adea4096ddadd760d39b6: *none*\n - Shape apkg-pro:GeoShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/bf:geographicCoverage/geo:hasGeometry\n - Shape apkg-pro:SpatialCoverageShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/bf:geographicCoverage\n - Shape apkg-pro:SecretShape: *none*\n - Shape apkg-rec:RecordShape: *none*\n - Shape apkg-pro:CWLDescriptorShape: <urn:apkg:tool:d.u.th:gr:openoil_animation:0.1.0>/apkg-pro:cwlDescriptor\n - Shape apkg-pro:ProcessShape/sh:property/sh:or/rdf:first: *none*\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/inesctec/ontology/processOntology/example_3_1.rdf",
+        "url": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/tests/inesctec/ontology/processOntology/example_3_1.rdf",
+        "exampleIndex": 3,
+        "snippetIndex": 1,
+        "language": "application/rdf+xml"
+      },
+      "result": false,
+      "hasWarnings": false,
+      "sections": [
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": [
+            {
+              "exception": "SAXParseException",
+              "isError": true,
+              "message": "Traceback (most recent call last):\n,  File \"/usr/local/lib/python3.12/xml/sax/expatreader.py\", line 211, in feed\n    self._parser.Parse(data, isFinal)\n,xml.parsers.expat.ExpatError: not well-formed (invalid token): line 1, column 0\n,\nDuring handling of the above exception, another exception occurred:\n\n,Traceback (most recent call last):\n,  File \"/src/ogc/bblocks/validate.py\", line 353, in _validate_resource\n    result = validator.validate(filename, output_filename, report,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 628, in validate\n    graph = self._load_graph(filename, output_filename, report,\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 583, in _load_graph\n    graph = Graph().parse(data=contents, format=rdf_format,\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n,  File \"/venv/lib/python3.12/site-packages/rdflib/graph.py\", line 1494, in parse\n    parser.parse(source, self, **args)\n,  File \"/venv/lib/python3.12/site-packages/rdflib/plugins/parsers/rdfxml.py\", line 647, in parse\n    self._parser.parse(source)\n,  File \"/usr/local/lib/python3.12/xml/sax/expatreader.py\", line 105, in parse\n    xmlreader.IncrementalParser.parse(self, source)\n,  File \"/usr/local/lib/python3.12/xml/sax/xmlreader.py\", line 124, in parse\n    self.feed(buffer)\n,  File \"/usr/local/lib/python3.12/xml/sax/expatreader.py\", line 215, in feed\n    self._err_handler.fatalError(exc)\n,  File \"/usr/local/lib/python3.12/xml/sax/handler.py\", line 38, in fatalError\n    raise exception\n,xml.sax._exceptions.SAXParseException: <unknown>:1:0: not well-formed (invalid token)\n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "hasWarnings": false,
+  "counts": {
+    "total": 3,
+    "passed": 2,
+    "failed": 1
+  }
+}

@@ -1,0 +1,38 @@
+
+
+{
+  "itemIdentifier": "ogc.inesctec.ontology.recordOntology",
+  "name": "OGC Record Ontology",
+  "abstract": "This Building Block represents the Ontology for the OGC API Records schema, based on the results of the Iliad Project for a Registry of ApplicationPackages.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-24T14:50:00Z",
+  "itemClass": "model",
+  "register": "ogc-incubator",
+  "version": "1.0",
+  "sources": [
+    {
+      "title": "OGC API - Records, Part 1, ",
+      "link": "https://docs.ogc.org/is/20-004r1/20-004r1.html"
+    }
+  ],
+  "dependsOn": [],
+  "tags": [
+    "Records",
+    "Ontology"
+  ],
+  "group": "Ontology",
+  "highlighted": true,
+  "shaclShapes": {
+    "ogc.inesctec.ontology.recordOntology": [
+      "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/_sources/recordOntology/rules.shacl"
+    ]
+  },
+  "dateOfLastChange": "2026-11-24",
+  "ontology": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/build/annotated/inesctec/ontology/recordOntology/ontology.ttl",
+  "sourceFiles": "https://raw.githubusercontent.com/marcoamarooliveira/ogc-rec-ontology-bblock/master/_sources/recordOntology/",
+  "validationPassed": true,
+  "description": "## Custom Feature Type \n\nThis building block illustrates a typical \"Feature Type\" - where an object is modelled as a \"Feature with geometry\", but has its own \"native schema\" - or \"domain model\".\n\nThis is an **interoperable** approach to defining a Feature, allowing re-use of a well-defined domain model.\n\ni.e. the attributes (properties) are managed independently of the packaging container (Feature) \n\nthe **mySchema\" building block is referenced by this container, complete with an example of semantic annotations for the domain model.  It may inherit reusable sub-components using the same mechanisms - after all there is usually a lot in common across a range of FeatureTypes in any environment.  \n\nThis building block **inherits** reusable semantic annotations from a common library, simplifying implementation. \n\n\n\n",
+  "annotatedSchema": null,
+  "gitRepository": "https://github.com/marcoamarooliveira/ogc-rec-ontology-bblock",
+  "gitPath": "_sources/recordOntology"
+}
